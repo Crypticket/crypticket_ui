@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:radar_ui/bloc/home/home_bloc.dart';
-import 'package:radar_ui/pages/show_events_page.dart';
-import 'package:radar_ui/pages/ticket_detail_page.dart';
+import 'package:radar_ui/bloc/show_events/show_events_bloc.dart';
+import 'package:radar_ui/pages/purchase_ticket_page.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({
+
+class ShowEventsView extends StatelessWidget {
+  const ShowEventsView({
     super.key,
   });
 
@@ -13,26 +13,15 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text("Bienvenido Ricardo"),
-        ),
+        title: const Text("Add Event"),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (builder) => const ShowEventsPage()),
-          );
-        },
-        label: const Text("Explore"),
-        icon: const Icon(Icons.add),
-      ),
-      body: BlocConsumer<HomeBloc, HomeState>(
+      body: BlocConsumer<ShowEventsBloc, ShowEventsState>(
         listener: (context, state) {},
         builder: (context, state) {
           return state.map(
             initial: (state) {
-              context.read<HomeBloc>().add(
-                    const HomeEvent.setUpHome(),
+              context.read<ShowEventsBloc>().add(
+                    const ShowEventsEvent.setUpAddEvent(),
                   );
               return const Center(
                 child: CircularProgressIndicator(),
@@ -54,18 +43,19 @@ class HomeView extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (builder) => TicketDetailPage(
-                                    ticket: state.tickets[index])),
+                              builder: (builder) =>
+                                  PurchaseTicketPage(event: state.events[index]),
+                            ),
                           );
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(16),
-                          child: Text(state.tickets[index].name),
+                          child: Text(state.events[index].name),
                         ),
                       ),
                     );
                   },
-                  itemCount: state.tickets.length,
+                  itemCount: state.events.length,
                 ),
               );
             },

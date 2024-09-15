@@ -169,7 +169,7 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() data,
+    required TResult Function(List<TicketModel> tickets) data,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -177,7 +177,7 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? data,
+    TResult? Function(List<TicketModel> tickets)? data,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -185,7 +185,7 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? data,
+    TResult Function(List<TicketModel> tickets)? data,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -274,7 +274,7 @@ class _$HomeInitialStateImpl implements HomeInitialState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() data,
+    required TResult Function(List<TicketModel> tickets) data,
     required TResult Function() error,
   }) {
     return initial();
@@ -285,7 +285,7 @@ class _$HomeInitialStateImpl implements HomeInitialState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? data,
+    TResult? Function(List<TicketModel> tickets)? data,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -296,7 +296,7 @@ class _$HomeInitialStateImpl implements HomeInitialState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? data,
+    TResult Function(List<TicketModel> tickets)? data,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -388,7 +388,7 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() data,
+    required TResult Function(List<TicketModel> tickets) data,
     required TResult Function() error,
   }) {
     return loading();
@@ -399,7 +399,7 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? data,
+    TResult? Function(List<TicketModel> tickets)? data,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -410,7 +410,7 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? data,
+    TResult Function(List<TicketModel> tickets)? data,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -467,6 +467,8 @@ abstract class _$$HomeDataStateImplCopyWith<$Res> {
   factory _$$HomeDataStateImplCopyWith(
           _$HomeDataStateImpl value, $Res Function(_$HomeDataStateImpl) then) =
       __$$HomeDataStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<TicketModel> tickets});
 }
 
 /// @nodoc
@@ -476,36 +478,67 @@ class __$$HomeDataStateImplCopyWithImpl<$Res>
   __$$HomeDataStateImplCopyWithImpl(
       _$HomeDataStateImpl _value, $Res Function(_$HomeDataStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tickets = null,
+  }) {
+    return _then(_$HomeDataStateImpl(
+      tickets: null == tickets
+          ? _value._tickets
+          : tickets // ignore: cast_nullable_to_non_nullable
+              as List<TicketModel>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$HomeDataStateImpl implements HomeDataState {
-  const _$HomeDataStateImpl();
+  const _$HomeDataStateImpl({required final List<TicketModel> tickets})
+      : _tickets = tickets;
+
+  final List<TicketModel> _tickets;
+  @override
+  List<TicketModel> get tickets {
+    if (_tickets is EqualUnmodifiableListView) return _tickets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tickets);
+  }
 
   @override
   String toString() {
-    return 'HomeState.data()';
+    return 'HomeState.data(tickets: $tickets)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomeDataStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HomeDataStateImpl &&
+            const DeepCollectionEquality().equals(other._tickets, _tickets));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tickets));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeDataStateImplCopyWith<_$HomeDataStateImpl> get copyWith =>
+      __$$HomeDataStateImplCopyWithImpl<_$HomeDataStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() data,
+    required TResult Function(List<TicketModel> tickets) data,
     required TResult Function() error,
   }) {
-    return data();
+    return data(tickets);
   }
 
   @override
@@ -513,10 +546,10 @@ class _$HomeDataStateImpl implements HomeDataState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? data,
+    TResult? Function(List<TicketModel> tickets)? data,
     TResult? Function()? error,
   }) {
-    return data?.call();
+    return data?.call(tickets);
   }
 
   @override
@@ -524,12 +557,12 @@ class _$HomeDataStateImpl implements HomeDataState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? data,
+    TResult Function(List<TicketModel> tickets)? data,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data();
+      return data(tickets);
     }
     return orElse();
   }
@@ -573,7 +606,13 @@ class _$HomeDataStateImpl implements HomeDataState {
 }
 
 abstract class HomeDataState implements HomeState {
-  const factory HomeDataState() = _$HomeDataStateImpl;
+  const factory HomeDataState({required final List<TicketModel> tickets}) =
+      _$HomeDataStateImpl;
+
+  List<TicketModel> get tickets;
+  @JsonKey(ignore: true)
+  _$$HomeDataStateImplCopyWith<_$HomeDataStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -616,7 +655,7 @@ class _$HomeErrorStateImpl implements HomeErrorState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() data,
+    required TResult Function(List<TicketModel> tickets) data,
     required TResult Function() error,
   }) {
     return error();
@@ -627,7 +666,7 @@ class _$HomeErrorStateImpl implements HomeErrorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? data,
+    TResult? Function(List<TicketModel> tickets)? data,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -638,7 +677,7 @@ class _$HomeErrorStateImpl implements HomeErrorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? data,
+    TResult Function(List<TicketModel> tickets)? data,
     TResult Function()? error,
     required TResult orElse(),
   }) {

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_event_bloc.dart';
+part of 'show_events_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$AddEventEvent {
+mixin _$ShowEventsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setUpAddEvent,
@@ -51,16 +51,16 @@ mixin _$AddEventEvent {
 }
 
 /// @nodoc
-abstract class $AddEventEventCopyWith<$Res> {
-  factory $AddEventEventCopyWith(
-          AddEventEvent value, $Res Function(AddEventEvent) then) =
-      _$AddEventEventCopyWithImpl<$Res, AddEventEvent>;
+abstract class $ShowEventsEventCopyWith<$Res> {
+  factory $ShowEventsEventCopyWith(
+          ShowEventsEvent value, $Res Function(ShowEventsEvent) then) =
+      _$ShowEventsEventCopyWithImpl<$Res, ShowEventsEvent>;
 }
 
 /// @nodoc
-class _$AddEventEventCopyWithImpl<$Res, $Val extends AddEventEvent>
-    implements $AddEventEventCopyWith<$Res> {
-  _$AddEventEventCopyWithImpl(this._value, this._then);
+class _$ShowEventsEventCopyWithImpl<$Res, $Val extends ShowEventsEvent>
+    implements $ShowEventsEventCopyWith<$Res> {
+  _$ShowEventsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,7 +77,7 @@ abstract class _$$SetUpAddEventImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SetUpAddEventImplCopyWithImpl<$Res>
-    extends _$AddEventEventCopyWithImpl<$Res, _$SetUpAddEventImpl>
+    extends _$ShowEventsEventCopyWithImpl<$Res, _$SetUpAddEventImpl>
     implements _$$SetUpAddEventImplCopyWith<$Res> {
   __$$SetUpAddEventImplCopyWithImpl(
       _$SetUpAddEventImpl _value, $Res Function(_$SetUpAddEventImpl) _then)
@@ -91,7 +91,7 @@ class _$SetUpAddEventImpl implements SetUpAddEvent {
 
   @override
   String toString() {
-    return 'AddEventEvent.setUpAddEvent()';
+    return 'ShowEventsEvent.setUpAddEvent()';
   }
 
   @override
@@ -160,18 +160,18 @@ class _$SetUpAddEventImpl implements SetUpAddEvent {
   }
 }
 
-abstract class SetUpAddEvent implements AddEventEvent {
+abstract class SetUpAddEvent implements ShowEventsEvent {
   const factory SetUpAddEvent() = _$SetUpAddEventImpl;
 }
 
 /// @nodoc
-mixin _$AddEventState {
+mixin _$ShowEventsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function() data,
+    required TResult Function(List<EventModel> events) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,7 +179,7 @@ mixin _$AddEventState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function()? data,
+    TResult? Function(List<EventModel> events)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -187,7 +187,7 @@ mixin _$AddEventState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function()? data,
+    TResult Function(List<EventModel> events)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -219,16 +219,16 @@ mixin _$AddEventState {
 }
 
 /// @nodoc
-abstract class $AddEventStateCopyWith<$Res> {
-  factory $AddEventStateCopyWith(
-          AddEventState value, $Res Function(AddEventState) then) =
-      _$AddEventStateCopyWithImpl<$Res, AddEventState>;
+abstract class $ShowEventsStateCopyWith<$Res> {
+  factory $ShowEventsStateCopyWith(
+          ShowEventsState value, $Res Function(ShowEventsState) then) =
+      _$ShowEventsStateCopyWithImpl<$Res, ShowEventsState>;
 }
 
 /// @nodoc
-class _$AddEventStateCopyWithImpl<$Res, $Val extends AddEventState>
-    implements $AddEventStateCopyWith<$Res> {
-  _$AddEventStateCopyWithImpl(this._value, this._then);
+class _$ShowEventsStateCopyWithImpl<$Res, $Val extends ShowEventsState>
+    implements $ShowEventsStateCopyWith<$Res> {
+  _$ShowEventsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -245,7 +245,7 @@ abstract class _$$AddEventInitialStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddEventInitialStateImplCopyWithImpl<$Res>
-    extends _$AddEventStateCopyWithImpl<$Res, _$AddEventInitialStateImpl>
+    extends _$ShowEventsStateCopyWithImpl<$Res, _$AddEventInitialStateImpl>
     implements _$$AddEventInitialStateImplCopyWith<$Res> {
   __$$AddEventInitialStateImplCopyWithImpl(_$AddEventInitialStateImpl _value,
       $Res Function(_$AddEventInitialStateImpl) _then)
@@ -259,7 +259,7 @@ class _$AddEventInitialStateImpl implements AddEventInitialState {
 
   @override
   String toString() {
-    return 'AddEventState.initial()';
+    return 'ShowEventsState.initial()';
   }
 
   @override
@@ -278,7 +278,7 @@ class _$AddEventInitialStateImpl implements AddEventInitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function() data,
+    required TResult Function(List<EventModel> events) data,
   }) {
     return initial();
   }
@@ -289,7 +289,7 @@ class _$AddEventInitialStateImpl implements AddEventInitialState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function()? data,
+    TResult? Function(List<EventModel> events)? data,
   }) {
     return initial?.call();
   }
@@ -300,7 +300,7 @@ class _$AddEventInitialStateImpl implements AddEventInitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function()? data,
+    TResult Function(List<EventModel> events)? data,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -347,7 +347,7 @@ class _$AddEventInitialStateImpl implements AddEventInitialState {
   }
 }
 
-abstract class AddEventInitialState implements AddEventState {
+abstract class AddEventInitialState implements ShowEventsState {
   const factory AddEventInitialState() = _$AddEventInitialStateImpl;
 }
 
@@ -360,7 +360,7 @@ abstract class _$$AddEventLoadingStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddEventLoadingStateImplCopyWithImpl<$Res>
-    extends _$AddEventStateCopyWithImpl<$Res, _$AddEventLoadingStateImpl>
+    extends _$ShowEventsStateCopyWithImpl<$Res, _$AddEventLoadingStateImpl>
     implements _$$AddEventLoadingStateImplCopyWith<$Res> {
   __$$AddEventLoadingStateImplCopyWithImpl(_$AddEventLoadingStateImpl _value,
       $Res Function(_$AddEventLoadingStateImpl) _then)
@@ -374,7 +374,7 @@ class _$AddEventLoadingStateImpl implements AddEventLoadingState {
 
   @override
   String toString() {
-    return 'AddEventState.loading()';
+    return 'ShowEventsState.loading()';
   }
 
   @override
@@ -393,7 +393,7 @@ class _$AddEventLoadingStateImpl implements AddEventLoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function() data,
+    required TResult Function(List<EventModel> events) data,
   }) {
     return loading();
   }
@@ -404,7 +404,7 @@ class _$AddEventLoadingStateImpl implements AddEventLoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function()? data,
+    TResult? Function(List<EventModel> events)? data,
   }) {
     return loading?.call();
   }
@@ -415,7 +415,7 @@ class _$AddEventLoadingStateImpl implements AddEventLoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function()? data,
+    TResult Function(List<EventModel> events)? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -462,7 +462,7 @@ class _$AddEventLoadingStateImpl implements AddEventLoadingState {
   }
 }
 
-abstract class AddEventLoadingState implements AddEventState {
+abstract class AddEventLoadingState implements ShowEventsState {
   const factory AddEventLoadingState() = _$AddEventLoadingStateImpl;
 }
 
@@ -475,7 +475,7 @@ abstract class _$$AddEventErrorStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddEventErrorStateImplCopyWithImpl<$Res>
-    extends _$AddEventStateCopyWithImpl<$Res, _$AddEventErrorStateImpl>
+    extends _$ShowEventsStateCopyWithImpl<$Res, _$AddEventErrorStateImpl>
     implements _$$AddEventErrorStateImplCopyWith<$Res> {
   __$$AddEventErrorStateImplCopyWithImpl(_$AddEventErrorStateImpl _value,
       $Res Function(_$AddEventErrorStateImpl) _then)
@@ -489,7 +489,7 @@ class _$AddEventErrorStateImpl implements AddEventErrorState {
 
   @override
   String toString() {
-    return 'AddEventState.error()';
+    return 'ShowEventsState.error()';
   }
 
   @override
@@ -507,7 +507,7 @@ class _$AddEventErrorStateImpl implements AddEventErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function() data,
+    required TResult Function(List<EventModel> events) data,
   }) {
     return error();
   }
@@ -518,7 +518,7 @@ class _$AddEventErrorStateImpl implements AddEventErrorState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function()? data,
+    TResult? Function(List<EventModel> events)? data,
   }) {
     return error?.call();
   }
@@ -529,7 +529,7 @@ class _$AddEventErrorStateImpl implements AddEventErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function()? data,
+    TResult Function(List<EventModel> events)? data,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -576,7 +576,7 @@ class _$AddEventErrorStateImpl implements AddEventErrorState {
   }
 }
 
-abstract class AddEventErrorState implements AddEventState {
+abstract class AddEventErrorState implements ShowEventsState {
   const factory AddEventErrorState() = _$AddEventErrorStateImpl;
 }
 
@@ -585,35 +585,69 @@ abstract class _$$AddEventDataStateImplCopyWith<$Res> {
   factory _$$AddEventDataStateImplCopyWith(_$AddEventDataStateImpl value,
           $Res Function(_$AddEventDataStateImpl) then) =
       __$$AddEventDataStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<EventModel> events});
 }
 
 /// @nodoc
 class __$$AddEventDataStateImplCopyWithImpl<$Res>
-    extends _$AddEventStateCopyWithImpl<$Res, _$AddEventDataStateImpl>
+    extends _$ShowEventsStateCopyWithImpl<$Res, _$AddEventDataStateImpl>
     implements _$$AddEventDataStateImplCopyWith<$Res> {
   __$$AddEventDataStateImplCopyWithImpl(_$AddEventDataStateImpl _value,
       $Res Function(_$AddEventDataStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? events = null,
+  }) {
+    return _then(_$AddEventDataStateImpl(
+      events: null == events
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<EventModel>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$AddEventDataStateImpl implements AddEventDataState {
-  const _$AddEventDataStateImpl();
+  const _$AddEventDataStateImpl({required final List<EventModel> events})
+      : _events = events;
+
+  final List<EventModel> _events;
+  @override
+  List<EventModel> get events {
+    if (_events is EqualUnmodifiableListView) return _events;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_events);
+  }
 
   @override
   String toString() {
-    return 'AddEventState.data()';
+    return 'ShowEventsState.data(events: $events)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddEventDataStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$AddEventDataStateImpl &&
+            const DeepCollectionEquality().equals(other._events, _events));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_events));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddEventDataStateImplCopyWith<_$AddEventDataStateImpl> get copyWith =>
+      __$$AddEventDataStateImplCopyWithImpl<_$AddEventDataStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -621,9 +655,9 @@ class _$AddEventDataStateImpl implements AddEventDataState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function() data,
+    required TResult Function(List<EventModel> events) data,
   }) {
-    return data();
+    return data(events);
   }
 
   @override
@@ -632,9 +666,9 @@ class _$AddEventDataStateImpl implements AddEventDataState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function()? data,
+    TResult? Function(List<EventModel> events)? data,
   }) {
-    return data?.call();
+    return data?.call(events);
   }
 
   @override
@@ -643,11 +677,11 @@ class _$AddEventDataStateImpl implements AddEventDataState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function()? data,
+    TResult Function(List<EventModel> events)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data();
+      return data(events);
     }
     return orElse();
   }
@@ -690,6 +724,12 @@ class _$AddEventDataStateImpl implements AddEventDataState {
   }
 }
 
-abstract class AddEventDataState implements AddEventState {
-  const factory AddEventDataState() = _$AddEventDataStateImpl;
+abstract class AddEventDataState implements ShowEventsState {
+  const factory AddEventDataState({required final List<EventModel> events}) =
+      _$AddEventDataStateImpl;
+
+  List<EventModel> get events;
+  @JsonKey(ignore: true)
+  _$$AddEventDataStateImplCopyWith<_$AddEventDataStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

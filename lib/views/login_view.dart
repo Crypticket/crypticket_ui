@@ -64,16 +64,15 @@ class LoginView extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      context.read<LoginBloc>().add(
-                            LoginEvent.doLogin(
-                              email: state.mapOrNull(
-                                      data: (state) => state.email) ??
-                                  "",
-                              password: state.mapOrNull(
-                                      data: (state) => state.password) ??
-                                  "",
-                            ),
-                          );
+                      state.mapOrNull(
+                        data: (state) {
+                          context.read<LoginBloc>().add(
+                                LoginEvent.doLogin(
+                                    email: state.email,
+                                    password: state.password),
+                              );
+                        },
+                      );
                     },
                     child: const Text("Log in"),
                   ),
