@@ -21,6 +21,7 @@ mixin _$LoginEvent {
     required TResult Function(String email, String password) doLogin,
     required TResult Function(String email) setEmail,
     required TResult Function(String password) setPassword,
+    required TResult Function(LoginState previousState) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$LoginEvent {
     TResult? Function(String email, String password)? doLogin,
     TResult? Function(String email)? setEmail,
     TResult? Function(String password)? setPassword,
+    TResult? Function(LoginState previousState)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$LoginEvent {
     TResult Function(String email, String password)? doLogin,
     TResult Function(String email)? setEmail,
     TResult Function(String password)? setPassword,
+    TResult Function(LoginState previousState)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$LoginEvent {
     required TResult Function(DoLoginEvent value) doLogin,
     required TResult Function(SetEmailEvent value) setEmail,
     required TResult Function(SetPasswordEvent value) setPassword,
+    required TResult Function(ResetEvent value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$LoginEvent {
     TResult? Function(DoLoginEvent value)? doLogin,
     TResult? Function(SetEmailEvent value)? setEmail,
     TResult? Function(SetPasswordEvent value)? setPassword,
+    TResult? Function(ResetEvent value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$LoginEvent {
     TResult Function(DoLoginEvent value)? doLogin,
     TResult Function(SetEmailEvent value)? setEmail,
     TResult Function(SetPasswordEvent value)? setPassword,
+    TResult Function(ResetEvent value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -156,6 +162,7 @@ class _$DoLoginEventImpl implements DoLoginEvent {
     required TResult Function(String email, String password) doLogin,
     required TResult Function(String email) setEmail,
     required TResult Function(String password) setPassword,
+    required TResult Function(LoginState previousState) reset,
   }) {
     return doLogin(email, password);
   }
@@ -166,6 +173,7 @@ class _$DoLoginEventImpl implements DoLoginEvent {
     TResult? Function(String email, String password)? doLogin,
     TResult? Function(String email)? setEmail,
     TResult? Function(String password)? setPassword,
+    TResult? Function(LoginState previousState)? reset,
   }) {
     return doLogin?.call(email, password);
   }
@@ -176,6 +184,7 @@ class _$DoLoginEventImpl implements DoLoginEvent {
     TResult Function(String email, String password)? doLogin,
     TResult Function(String email)? setEmail,
     TResult Function(String password)? setPassword,
+    TResult Function(LoginState previousState)? reset,
     required TResult orElse(),
   }) {
     if (doLogin != null) {
@@ -190,6 +199,7 @@ class _$DoLoginEventImpl implements DoLoginEvent {
     required TResult Function(DoLoginEvent value) doLogin,
     required TResult Function(SetEmailEvent value) setEmail,
     required TResult Function(SetPasswordEvent value) setPassword,
+    required TResult Function(ResetEvent value) reset,
   }) {
     return doLogin(this);
   }
@@ -200,6 +210,7 @@ class _$DoLoginEventImpl implements DoLoginEvent {
     TResult? Function(DoLoginEvent value)? doLogin,
     TResult? Function(SetEmailEvent value)? setEmail,
     TResult? Function(SetPasswordEvent value)? setPassword,
+    TResult? Function(ResetEvent value)? reset,
   }) {
     return doLogin?.call(this);
   }
@@ -210,6 +221,7 @@ class _$DoLoginEventImpl implements DoLoginEvent {
     TResult Function(DoLoginEvent value)? doLogin,
     TResult Function(SetEmailEvent value)? setEmail,
     TResult Function(SetPasswordEvent value)? setPassword,
+    TResult Function(ResetEvent value)? reset,
     required TResult orElse(),
   }) {
     if (doLogin != null) {
@@ -298,6 +310,7 @@ class _$SetEmailEventImpl implements SetEmailEvent {
     required TResult Function(String email, String password) doLogin,
     required TResult Function(String email) setEmail,
     required TResult Function(String password) setPassword,
+    required TResult Function(LoginState previousState) reset,
   }) {
     return setEmail(email);
   }
@@ -308,6 +321,7 @@ class _$SetEmailEventImpl implements SetEmailEvent {
     TResult? Function(String email, String password)? doLogin,
     TResult? Function(String email)? setEmail,
     TResult? Function(String password)? setPassword,
+    TResult? Function(LoginState previousState)? reset,
   }) {
     return setEmail?.call(email);
   }
@@ -318,6 +332,7 @@ class _$SetEmailEventImpl implements SetEmailEvent {
     TResult Function(String email, String password)? doLogin,
     TResult Function(String email)? setEmail,
     TResult Function(String password)? setPassword,
+    TResult Function(LoginState previousState)? reset,
     required TResult orElse(),
   }) {
     if (setEmail != null) {
@@ -332,6 +347,7 @@ class _$SetEmailEventImpl implements SetEmailEvent {
     required TResult Function(DoLoginEvent value) doLogin,
     required TResult Function(SetEmailEvent value) setEmail,
     required TResult Function(SetPasswordEvent value) setPassword,
+    required TResult Function(ResetEvent value) reset,
   }) {
     return setEmail(this);
   }
@@ -342,6 +358,7 @@ class _$SetEmailEventImpl implements SetEmailEvent {
     TResult? Function(DoLoginEvent value)? doLogin,
     TResult? Function(SetEmailEvent value)? setEmail,
     TResult? Function(SetPasswordEvent value)? setPassword,
+    TResult? Function(ResetEvent value)? reset,
   }) {
     return setEmail?.call(this);
   }
@@ -352,6 +369,7 @@ class _$SetEmailEventImpl implements SetEmailEvent {
     TResult Function(DoLoginEvent value)? doLogin,
     TResult Function(SetEmailEvent value)? setEmail,
     TResult Function(SetPasswordEvent value)? setPassword,
+    TResult Function(ResetEvent value)? reset,
     required TResult orElse(),
   }) {
     if (setEmail != null) {
@@ -440,6 +458,7 @@ class _$SetPasswordEventImpl implements SetPasswordEvent {
     required TResult Function(String email, String password) doLogin,
     required TResult Function(String email) setEmail,
     required TResult Function(String password) setPassword,
+    required TResult Function(LoginState previousState) reset,
   }) {
     return setPassword(password);
   }
@@ -450,6 +469,7 @@ class _$SetPasswordEventImpl implements SetPasswordEvent {
     TResult? Function(String email, String password)? doLogin,
     TResult? Function(String email)? setEmail,
     TResult? Function(String password)? setPassword,
+    TResult? Function(LoginState previousState)? reset,
   }) {
     return setPassword?.call(password);
   }
@@ -460,6 +480,7 @@ class _$SetPasswordEventImpl implements SetPasswordEvent {
     TResult Function(String email, String password)? doLogin,
     TResult Function(String email)? setEmail,
     TResult Function(String password)? setPassword,
+    TResult Function(LoginState previousState)? reset,
     required TResult orElse(),
   }) {
     if (setPassword != null) {
@@ -474,6 +495,7 @@ class _$SetPasswordEventImpl implements SetPasswordEvent {
     required TResult Function(DoLoginEvent value) doLogin,
     required TResult Function(SetEmailEvent value) setEmail,
     required TResult Function(SetPasswordEvent value) setPassword,
+    required TResult Function(ResetEvent value) reset,
   }) {
     return setPassword(this);
   }
@@ -484,6 +506,7 @@ class _$SetPasswordEventImpl implements SetPasswordEvent {
     TResult? Function(DoLoginEvent value)? doLogin,
     TResult? Function(SetEmailEvent value)? setEmail,
     TResult? Function(SetPasswordEvent value)? setPassword,
+    TResult? Function(ResetEvent value)? reset,
   }) {
     return setPassword?.call(this);
   }
@@ -494,6 +517,7 @@ class _$SetPasswordEventImpl implements SetPasswordEvent {
     TResult Function(DoLoginEvent value)? doLogin,
     TResult Function(SetEmailEvent value)? setEmail,
     TResult Function(SetPasswordEvent value)? setPassword,
+    TResult Function(ResetEvent value)? reset,
     required TResult orElse(),
   }) {
     if (setPassword != null) {
@@ -514,12 +538,169 @@ abstract class SetPasswordEvent implements LoginEvent {
 }
 
 /// @nodoc
+abstract class _$$ResetEventImplCopyWith<$Res> {
+  factory _$$ResetEventImplCopyWith(
+          _$ResetEventImpl value, $Res Function(_$ResetEventImpl) then) =
+      __$$ResetEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LoginState previousState});
+
+  $LoginStateCopyWith<$Res> get previousState;
+}
+
+/// @nodoc
+class __$$ResetEventImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$ResetEventImpl>
+    implements _$$ResetEventImplCopyWith<$Res> {
+  __$$ResetEventImplCopyWithImpl(
+      _$ResetEventImpl _value, $Res Function(_$ResetEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? previousState = null,
+  }) {
+    return _then(_$ResetEventImpl(
+      previousState: null == previousState
+          ? _value.previousState
+          : previousState // ignore: cast_nullable_to_non_nullable
+              as LoginState,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LoginStateCopyWith<$Res> get previousState {
+    return $LoginStateCopyWith<$Res>(_value.previousState, (value) {
+      return _then(_value.copyWith(previousState: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ResetEventImpl implements ResetEvent {
+  const _$ResetEventImpl({required this.previousState});
+
+  @override
+  final LoginState previousState;
+
+  @override
+  String toString() {
+    return 'LoginEvent.reset(previousState: $previousState)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetEventImpl &&
+            (identical(other.previousState, previousState) ||
+                other.previousState == previousState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, previousState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResetEventImplCopyWith<_$ResetEventImpl> get copyWith =>
+      __$$ResetEventImplCopyWithImpl<_$ResetEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password) doLogin,
+    required TResult Function(String email) setEmail,
+    required TResult Function(String password) setPassword,
+    required TResult Function(LoginState previousState) reset,
+  }) {
+    return reset(previousState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)? doLogin,
+    TResult? Function(String email)? setEmail,
+    TResult? Function(String password)? setPassword,
+    TResult? Function(LoginState previousState)? reset,
+  }) {
+    return reset?.call(previousState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? doLogin,
+    TResult Function(String email)? setEmail,
+    TResult Function(String password)? setPassword,
+    TResult Function(LoginState previousState)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(previousState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DoLoginEvent value) doLogin,
+    required TResult Function(SetEmailEvent value) setEmail,
+    required TResult Function(SetPasswordEvent value) setPassword,
+    required TResult Function(ResetEvent value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DoLoginEvent value)? doLogin,
+    TResult? Function(SetEmailEvent value)? setEmail,
+    TResult? Function(SetPasswordEvent value)? setPassword,
+    TResult? Function(ResetEvent value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DoLoginEvent value)? doLogin,
+    TResult Function(SetEmailEvent value)? setEmail,
+    TResult Function(SetPasswordEvent value)? setPassword,
+    TResult Function(ResetEvent value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetEvent implements LoginEvent {
+  const factory ResetEvent({required final LoginState previousState}) =
+      _$ResetEventImpl;
+
+  LoginState get previousState;
+  @JsonKey(ignore: true)
+  _$$ResetEventImplCopyWith<_$ResetEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$LoginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) data,
     required TResult Function() loading,
-    required TResult Function() error,
+    required TResult Function(LoginState previousState) error,
     required TResult Function() success,
   }) =>
       throw _privateConstructorUsedError;
@@ -527,7 +708,7 @@ mixin _$LoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? data,
     TResult? Function()? loading,
-    TResult? Function()? error,
+    TResult? Function(LoginState previousState)? error,
     TResult? Function()? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -535,7 +716,7 @@ mixin _$LoginState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? data,
     TResult Function()? loading,
-    TResult Function()? error,
+    TResult Function(LoginState previousState)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) =>
@@ -661,7 +842,7 @@ class _$LoginDataStateImpl implements LoginDataState {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) data,
     required TResult Function() loading,
-    required TResult Function() error,
+    required TResult Function(LoginState previousState) error,
     required TResult Function() success,
   }) {
     return data(email, password);
@@ -672,7 +853,7 @@ class _$LoginDataStateImpl implements LoginDataState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? data,
     TResult? Function()? loading,
-    TResult? Function()? error,
+    TResult? Function(LoginState previousState)? error,
     TResult? Function()? success,
   }) {
     return data?.call(email, password);
@@ -683,7 +864,7 @@ class _$LoginDataStateImpl implements LoginDataState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? data,
     TResult Function()? loading,
-    TResult Function()? error,
+    TResult Function(LoginState previousState)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -783,7 +964,7 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) data,
     required TResult Function() loading,
-    required TResult Function() error,
+    required TResult Function(LoginState previousState) error,
     required TResult Function() success,
   }) {
     return loading();
@@ -794,7 +975,7 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? data,
     TResult? Function()? loading,
-    TResult? Function()? error,
+    TResult? Function(LoginState previousState)? error,
     TResult? Function()? success,
   }) {
     return loading?.call();
@@ -805,7 +986,7 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? data,
     TResult Function()? loading,
-    TResult Function()? error,
+    TResult Function(LoginState previousState)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -862,6 +1043,10 @@ abstract class _$$LoginErrorStateImplCopyWith<$Res> {
   factory _$$LoginErrorStateImplCopyWith(_$LoginErrorStateImpl value,
           $Res Function(_$LoginErrorStateImpl) then) =
       __$$LoginErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LoginState previousState});
+
+  $LoginStateCopyWith<$Res> get previousState;
 }
 
 /// @nodoc
@@ -871,36 +1056,70 @@ class __$$LoginErrorStateImplCopyWithImpl<$Res>
   __$$LoginErrorStateImplCopyWithImpl(
       _$LoginErrorStateImpl _value, $Res Function(_$LoginErrorStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? previousState = null,
+  }) {
+    return _then(_$LoginErrorStateImpl(
+      previousState: null == previousState
+          ? _value.previousState
+          : previousState // ignore: cast_nullable_to_non_nullable
+              as LoginState,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LoginStateCopyWith<$Res> get previousState {
+    return $LoginStateCopyWith<$Res>(_value.previousState, (value) {
+      return _then(_value.copyWith(previousState: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$LoginErrorStateImpl implements LoginErrorState {
-  const _$LoginErrorStateImpl();
+  const _$LoginErrorStateImpl({required this.previousState});
+
+  @override
+  final LoginState previousState;
 
   @override
   String toString() {
-    return 'LoginState.error()';
+    return 'LoginState.error(previousState: $previousState)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginErrorStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginErrorStateImpl &&
+            (identical(other.previousState, previousState) ||
+                other.previousState == previousState));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, previousState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginErrorStateImplCopyWith<_$LoginErrorStateImpl> get copyWith =>
+      __$$LoginErrorStateImplCopyWithImpl<_$LoginErrorStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) data,
     required TResult Function() loading,
-    required TResult Function() error,
+    required TResult Function(LoginState previousState) error,
     required TResult Function() success,
   }) {
-    return error();
+    return error(previousState);
   }
 
   @override
@@ -908,10 +1127,10 @@ class _$LoginErrorStateImpl implements LoginErrorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? data,
     TResult? Function()? loading,
-    TResult? Function()? error,
+    TResult? Function(LoginState previousState)? error,
     TResult? Function()? success,
   }) {
-    return error?.call();
+    return error?.call(previousState);
   }
 
   @override
@@ -919,12 +1138,12 @@ class _$LoginErrorStateImpl implements LoginErrorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? data,
     TResult Function()? loading,
-    TResult Function()? error,
+    TResult Function(LoginState previousState)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(previousState);
     }
     return orElse();
   }
@@ -968,7 +1187,13 @@ class _$LoginErrorStateImpl implements LoginErrorState {
 }
 
 abstract class LoginErrorState implements LoginState {
-  const factory LoginErrorState() = _$LoginErrorStateImpl;
+  const factory LoginErrorState({required final LoginState previousState}) =
+      _$LoginErrorStateImpl;
+
+  LoginState get previousState;
+  @JsonKey(ignore: true)
+  _$$LoginErrorStateImplCopyWith<_$LoginErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1011,7 +1236,7 @@ class _$LoginSucessStateImpl implements LoginSucessState {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) data,
     required TResult Function() loading,
-    required TResult Function() error,
+    required TResult Function(LoginState previousState) error,
     required TResult Function() success,
   }) {
     return success();
@@ -1022,7 +1247,7 @@ class _$LoginSucessStateImpl implements LoginSucessState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? data,
     TResult? Function()? loading,
-    TResult? Function()? error,
+    TResult? Function(LoginState previousState)? error,
     TResult? Function()? success,
   }) {
     return success?.call();
@@ -1033,7 +1258,7 @@ class _$LoginSucessStateImpl implements LoginSucessState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? data,
     TResult Function()? loading,
-    TResult Function()? error,
+    TResult Function(LoginState previousState)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {

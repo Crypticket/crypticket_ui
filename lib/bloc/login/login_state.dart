@@ -9,8 +9,9 @@ class LoginState with _$LoginState {
 
   const factory LoginState.loading() = LoginLoadingState;
 
-  const factory LoginState.error() = LoginErrorState;
+  const factory LoginState.error({
+    required LoginState previousState,
+  }) = LoginErrorState;
 
   const factory LoginState.success() = LoginSucessState;
-
 }

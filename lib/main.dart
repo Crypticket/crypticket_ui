@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:json_theme_plus/json_theme_plus.dart';
 import 'dart:convert';
 
 import 'package:radar_ui/pages/login_page.dart';
 
-void main() async {
+Future<void> main() async {
+  await dotenv.load();
   WidgetsFlutterBinding.ensureInitialized();
 
   final themeStr = await rootBundle.loadString('assets/appainter_theme.json');

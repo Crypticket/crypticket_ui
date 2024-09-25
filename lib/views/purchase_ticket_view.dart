@@ -16,7 +16,7 @@ class PurchaseTicketView extends StatelessWidget {
         title: const Text("Purchase Ticket"),
       ),
       body: Center(
-        child: Text(this.event.name),
+        child: Text(event.name),
       ),
     );
   }

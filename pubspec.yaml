@@ -9,10 +9,12 @@ environment:
 dependencies:
   barcode_widget: ^2.0.3
   bloc: ^8.1.4
+  crypto: ^3.0.5
   dio: ^5.7.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_dotenv: ^5.1.0
   freezed: ^2.5.2
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
@@ -29,4 +31,5 @@ flutter:
   assets:
     - assets/appainter_theme.json
     - assets/appainter_theme_dark.json
+    - .env
   uses-material-design: true

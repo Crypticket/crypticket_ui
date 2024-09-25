@@ -14,4 +14,8 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.setPassword({
     required String password,
   }) = SetPasswordEvent;
+
+  const factory LoginEvent.reset({
+    required LoginState previousState,
+  }) = ResetEvent;
 }
